@@ -1,0 +1,132 @@
+.menu-items {
+    position: relative;
+    /* Optional: add a background color and padding for the main menu */
+    background: #fff;
+    padding: 10px 0;
+}
+
+.menu-item {
+    position: relative; /* Positioning for submenu */
+    transition: background 0.3s; /* Smooth background transition on hover */
+}
+
+.menu-item:hover {
+    background: #f9f9f9; /* Change background on hover for better visual feedback */
+}
+
+.submenu {
+    display: none; 
+    position: absolute; 
+    top: 0; 
+    left: 190px; 
+    background: #fff; 
+    border: 1px solid #ccc; 
+    z-index: 1000; 
+    padding: 0; 
+    width: 200px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    opacity: 0; 
+    visibility: hidden;
+    transform: translateY(-10px); 
+    transition: opacity 0.3s ease, transform 0.3s ease; 
+    text-transform:capitalize;
+}
+
+.menu-item:hover .submenu {
+    display: block; 
+    opacity: 1; 
+    visibility: visible; 
+    transform: translateY(0);
+    
+}
+
+.submenu .menu-item {
+    width: 100%; /* Full width for submenu items */
+}
+
+.submenu .menu-item a {
+    display: block; /* Make links block elements */
+    padding: 10px; /* Padding for submenu links */
+    text-decoration: none; /* Remove underline */
+    color: #333; /* Text color */
+    transition: background 0.3s; /* Smooth background transition */
+    
+}
+
+.submenu .menu-item a:before {
+   font-family:fontawesome;
+    content: "\f105";
+    margin-right: 10px;
+    color: #333;
+    
+}
+
+.submenu .menu-item a:hover {
+    background: #f0f0f0; /* Change background on hover */
+}
+
+   /* Styling for the Frying Pans menu */
+   .popup .nav > li {
+    position: relative; /* Needed for positioning the child menu */
+    width: 200px; /* Set width for parent menu */
+}
+
+.child-menu {
+    display: none; /* Hide child menu by default */
+    position: absolute; /* Position it relative to the parent */
+    left: 100%; /* Align to the right of the parent */
+    top: 0; /* Align to the top */
+    background: white; /* Set background for visibility */
+    border: 1px solid #ccc; /* Optional border */
+    padding: 10px; /* Padding for the child menu */
+    z-index: 1000; /* Ensure it appears above other elements */
+    font-size: 14px; /* Font size for child menu items */
+    width: 200px; /* Width for child menu */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
+    list-style:none;
+}
+
+.popup .nav > li:hover > .child-menu {
+    display: block; /* Show child menu on hover */
+}
+
+/* General styling for the popup menu */
+.popup {
+    display: none; /* Hide the popup by default */
+    position: absolute; /* Position relative to the parent */
+    background: white; /* Set background for visibility */
+    border: 1px solid #ccc; /* Optional border */
+    padding: 10px; /* Padding for the popup */
+    z-index: 1000; /* Ensure it appears above other elements */
+    font-size: 14px; /* Match font size with child menu */
+}
+
+.wrap-popup:hover .popup {
+    display: block; /* Show popup on hover */
+}
+
+.nav {
+    padding: 0; /* Remove default padding */
+    list-style: none; /* Remove bullets */
+}
+
+.nav > li {
+    position: relative; /* Needed for nested positioning */
+    list-style: none;
+    
+}
+
+/* Optional: Additional styling for links in the menus */
+.popup .nav a,
+.child-menu a {
+    text-decoration: none; /* Remove underline from links */
+    color: #333; /* Text color */
+    padding: 8px 10px; /* Padding for links */
+    display: block; /* Make links full width */
+    transition: background 0.3s; /* Smooth background transition */
+}
+
+.popup .nav a:hover,
+.child-menu a:hover {
+    background: #f0f0f0; /* Highlight on hover */
+}
